@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+{% block body %}
+
+<h1>Inscription</h1>
+
+{# {{ form(form) }} #}
+<form method="post">
+
+</form>
+{{  form_start(form)}}
+
+<div class="row custom-ml-150px">
+    <div class="offset-2 col-2">
+        {{ form_row(form.email) }}
+    </div>
+    <div class="col-2">
+        {{ form_row(form.password) }}
+    </div>
+    <div class="col-2">
+        {{ form_row(form.pseudo) }}
+    </div>
+</div>
+    <button class="btn btn-lg btn-primary" type="submit">
+        S'inscrire
+    </button>
+
+
+<style>
+    .custom-ml-150px {
+        margin-left: 150px;
+    }
+</style>
+{{  form_end(form)}}
+{% endblock %}
+
+

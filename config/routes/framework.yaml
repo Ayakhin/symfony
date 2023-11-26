@@ -1,0 +1,14 @@
+when@dev:
+    _errors:
+        resource: '@FrameworkBundle/Resources/config/routing/errors.xml'
+        prefix: /_error
+home:
+    path: /
+    controller: App\Controller\AccueilController::index
+connexion:
+    path: /connexion
+    controller: App\Controller\ConnexionController::connexion
+inscription:
+    path: /inscription
+    controller: App\Controller\InscriptionController::inscription
+    

@@ -1,0 +1,35 @@
+{% extends "back.html.twig" %}
+
+{% block title "gestion des catégories" %}
+
+{% block bodyback %}
+
+<h1>Gestion des catégories</h1>
+
+<table class="table table-striped align-middle">
+    <thead>
+        <tr>
+            <th>label</th>
+            <th>etat</th>
+            <th>actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for categorie in categories %}
+            <tr>
+                <td>{{ categorie.label }}</td>
+                <td>
+                    <span class="badge {{  categorie.etat  ? 'bg-success' :   'bg-danger'   }}">
+                        {{ categorie.isactif }}
+                    </span>
+                </td>
+                <td>
+                    <a href="" class="btn btn-warning me-3"> Modifier </a>
+                    <a href="" class="btn btn-danger"> supprimer </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

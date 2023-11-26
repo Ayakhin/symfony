@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+
+{% block title "Location de vehicule" %}
+
+{% block body %}
+
+{% for info in app.flashes('success') %}
+    <div class="alert alert-success">
+        {{ info }}
+    </div>
+{% endfor %}
+
+<h1>Bienvenu à bord</h1>
+<h2>Location de voiture 24h/24 et 7j/7</h2>
+
+    {{form(form) }}
+
+
+
+{% endblock %}

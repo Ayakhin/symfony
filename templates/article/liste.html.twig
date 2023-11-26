@@ -1,0 +1,42 @@
+{% extends "back.html.twig" %}
+
+{% block title "gestion des articles" %}
+
+{% block bodyback %}
+
+<h1>Gestion des articles</h1>
+
+<table class="table table-striped align-middle">
+    <thead>
+        <tr>
+            <th>titre</th>
+            <th>auteur</th>
+            <th>catégorie</th>
+            <th>date création</th>
+            <th>actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for article in articles %}
+            <tr>
+                <td>{{ article.title }}</td>
+                <td>{{ article.membre.pseudo }}</td>
+                <td>
+                    {% if article.categories is null %}
+                        N/A
+                    {% else %}
+                    {{ article.categories.label  }}
+                    {% endif %}
+                </td>
+                <td>{{ article.createdAt | date("d/m/Y H:i:s") }}</td>
+                <td>
+                    <a href="{{ path('article_update' , {id : article.id} )}}" class="btn btn-warning me-3"> Modifier </a>
+                    <a href="{{ path('article_delete' , {id : article.id}) }}" class="btn btn-danger"> supprimer </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}
